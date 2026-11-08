@@ -47,7 +47,7 @@ Split: 80/20, stratified, `random_state=5278`.
 
 ## c. Github Repository Link
 
-https://github.com/YOUR-USERNAME/student-outcome-classifier  (replace with the real link after pushing)
+https://github.com/omkarshitole99/student-outcome-classifier
 
 Live app: https://YOUR-APP-NAME.streamlit.app  (replace after deploying)
 
