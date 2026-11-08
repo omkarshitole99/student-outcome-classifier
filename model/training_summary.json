@@ -1,0 +1,290 @@
+{
+  "dataset": {
+    "source": "UCI Machine Learning Repository, id 697 (Predict Students' Dropout and Academic Success)",
+    "rows": 4424,
+    "raw_features": 36,
+    "class_counts": {
+      "Graduate": 2209,
+      "Dropout": 1421,
+      "Enrolled": 794
+    }
+  },
+  "split": {
+    "seed": 5278,
+    "test_share": 0.2,
+    "train_rows": 3539,
+    "test_rows": 885,
+    "train_class_counts": {
+      "Graduate": 1767,
+      "Dropout": 1137,
+      "Enrolled": 635
+    },
+    "test_class_counts": {
+      "Graduate": 442,
+      "Dropout": 284,
+      "Enrolled": 159
+    }
+  },
+  "labels": [
+    "Dropout",
+    "Enrolled",
+    "Graduate"
+  ],
+  "feature_columns": [
+    "marital_status",
+    "application_mode",
+    "course",
+    "previous_qualification",
+    "nationality",
+    "mothers_qualification",
+    "fathers_qualification",
+    "mothers_occupation",
+    "fathers_occupation",
+    "daytime_evening_attendance",
+    "displaced",
+    "educational_special_needs",
+    "debtor",
+    "tuition_fees_up_to_date",
+    "gender",
+    "scholarship_holder",
+    "international",
+    "application_order",
+    "previous_qualification_grade",
+    "admission_grade",
+    "age_at_enrollment",
+    "curricular_units_1st_sem_credited",
+    "curricular_units_1st_sem_enrolled",
+    "curricular_units_1st_sem_evaluations",
+    "curricular_units_1st_sem_approved",
+    "curricular_units_1st_sem_grade",
+    "curricular_units_1st_sem_without_evaluations",
+    "curricular_units_2nd_sem_credited",
+    "curricular_units_2nd_sem_enrolled",
+    "curricular_units_2nd_sem_evaluations",
+    "curricular_units_2nd_sem_approved",
+    "curricular_units_2nd_sem_grade",
+    "curricular_units_2nd_sem_without_evaluations",
+    "unemployment_rate",
+    "inflation_rate",
+    "gdp",
+    "pass_rate_1st_sem",
+    "pass_rate_2nd_sem",
+    "grade_change"
+  ],
+  "tuning": {
+    "folds": 5,
+    "scoring": "f1_macro"
+  },
+  "feature_check": {
+    "Logistic Regression": {
+      "raw_columns_only": 0.7099,
+      "with_extra_columns": 0.7105
+    },
+    "SVM (rbf, defaults)": {
+      "raw_columns_only": 0.703,
+      "with_extra_columns": 0.7077
+    }
+  },
+  "models": {
+    "Logistic Regression": {
+      "file": "logistic_regression.joblib",
+      "best_params": {
+        "C": 0.1,
+        "class_weight": "balanced"
+      },
+      "grid_size": 10,
+      "cv_macro_f1": 0.7137,
+      "holdout": {
+        "Accuracy": 0.7548,
+        "AUC": 0.8814,
+        "Precision": 0.7117,
+        "Recall": 0.7113,
+        "F1": 0.7095,
+        "MCC": 0.6054
+      },
+      "holdout_f1_by_class": {
+        "Dropout": 0.7918,
+        "Enrolled": 0.5072,
+        "Graduate": 0.8294
+      },
+      "top_features": [
+        {
+          "feature": "tuition_fees_up_to_date",
+          "weight": -1.3126
+        },
+        {
+          "feature": "curricular_units_2nd_sem_approved",
+          "weight": -0.6158
+        },
+        {
+          "feature": "course_171",
+          "weight": -0.603
+        },
+        {
+          "feature": "curricular_units_1st_sem_approved",
+          "weight": -0.5828
+        },
+        {
+          "feature": "pass_rate_2nd_sem",
+          "weight": -0.563
+        },
+        {
+          "feature": "fathers_occupation_infrequent_sklearn",
+          "weight": -0.5377
+        },
+        {
+          "feature": "course_9853",
+          "weight": 0.5136
+        },
+        {
+          "feature": "mothers_occupation_0",
+          "weight": 0.5109
+        },
+        {
+          "feature": "course_9130",
+          "weight": 0.4775
+        },
+        {
+          "feature": "curricular_units_2nd_sem_enrolled",
+          "weight": 0.4552
+        }
+      ]
+    },
+    "Decision Tree": {
+      "file": "decision_tree.joblib",
+      "best_params": {
+        "class_weight": null,
+        "criterion": "gini",
+        "max_depth": 4,
+        "min_samples_leaf": 10
+      },
+      "grid_size": 96,
+      "cv_macro_f1": 0.6919,
+      "holdout": {
+        "Accuracy": 0.7243,
+        "AUC": 0.841,
+        "Precision": 0.6791,
+        "Recall": 0.6561,
+        "F1": 0.6632,
+        "MCC": 0.5492
+      },
+      "holdout_f1_by_class": {
+        "Dropout": 0.7623,
+        "Enrolled": 0.4159,
+        "Graduate": 0.8116
+      },
+      "top_features": [
+        {
+          "feature": "pass_rate_2nd_sem",
+          "weight": 0.7678
+        },
+        {
+          "feature": "pass_rate_1st_sem",
+          "weight": 0.0711
+        },
+        {
+          "feature": "tuition_fees_up_to_date",
+          "weight": 0.0686
+        },
+        {
+          "feature": "curricular_units_2nd_sem_enrolled",
+          "weight": 0.0441
+        },
+        {
+          "feature": "curricular_units_1st_sem_approved",
+          "weight": 0.0227
+        },
+        {
+          "feature": "gdp",
+          "weight": 0.0095
+        },
+        {
+          "feature": "admission_grade",
+          "weight": 0.0075
+        },
+        {
+          "feature": "course_9119",
+          "weight": 0.0045
+        },
+        {
+          "feature": "curricular_units_2nd_sem_grade",
+          "weight": 0.004
+        },
+        {
+          "feature": "marital_status_1",
+          "weight": 0.0
+        }
+      ]
+    },
+    "KNN": {
+      "file": "knn.joblib",
+      "best_params": {
+        "n_neighbors": 15,
+        "p": 1,
+        "weights": "uniform"
+      },
+      "grid_size": 20,
+      "cv_macro_f1": 0.6419,
+      "holdout": {
+        "Accuracy": 0.7412,
+        "AUC": 0.8519,
+        "Precision": 0.7123,
+        "Recall": 0.6285,
+        "F1": 0.6418,
+        "MCC": 0.573
+      },
+      "holdout_f1_by_class": {
+        "Dropout": 0.7594,
+        "Enrolled": 0.3448,
+        "Graduate": 0.8213
+      },
+      "top_features": null
+    },
+    "Naive Bayes": {
+      "file": "naive_bayes.joblib",
+      "best_params": {
+        "var_smoothing": 0.1
+      },
+      "grid_size": 9,
+      "cv_macro_f1": 0.6414,
+      "holdout": {
+        "Accuracy": 0.7028,
+        "AUC": 0.8126,
+        "Precision": 0.6561,
+        "Recall": 0.6211,
+        "F1": 0.6295,
+        "MCC": 0.5099
+      },
+      "holdout_f1_by_class": {
+        "Dropout": 0.6749,
+        "Enrolled": 0.4013,
+        "Graduate": 0.8123
+      },
+      "top_features": null
+    },
+    "Support Vector Machine": {
+      "file": "svm.joblib",
+      "best_params": {
+        "C": 100.0,
+        "class_weight": "balanced",
+        "gamma": 0.001
+      },
+      "grid_size": 50,
+      "cv_macro_f1": 0.7188,
+      "holdout": {
+        "Accuracy": 0.7831,
+        "AUC": 0.8582,
+        "Precision": 0.7403,
+        "Recall": 0.7201,
+        "F1": 0.7283,
+        "MCC": 0.6428
+      },
+      "holdout_f1_by_class": {
+        "Dropout": 0.8074,
+        "Enrolled": 0.5249,
+        "Graduate": 0.8525
+      },
+      "top_features": null
+    }
+  }
+}
