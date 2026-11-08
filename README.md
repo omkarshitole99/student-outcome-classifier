@@ -49,7 +49,7 @@ Split: 80/20, stratified, `random_state=5278`.
 
 https://github.com/omkarshitole99/student-outcome-classifier
 
-Live app: https://YOUR-APP-NAME.streamlit.app  (replace after deploying)
+Live app: https://2026ak05278-student-outcome-classifier.streamlit.app/
 
 ```
 student-outcome-classifier/
